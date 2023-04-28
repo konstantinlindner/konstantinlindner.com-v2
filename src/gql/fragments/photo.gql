@@ -1,0 +1,23 @@
+fragment FullPhoto on PhotoRecord {
+  id
+  imgtxt
+  img {
+    responsiveImage(imgixParams: { fit: crop, dpi: "1" }) {
+      srcSet
+      webpSrcSet
+      sizes
+      src
+
+      width
+      height
+      aspectRatio
+
+      alt
+      title
+
+      bgColor
+
+      base64
+    }
+  }
+}
