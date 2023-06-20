@@ -31,5 +31,8 @@
     "react-datocms": "^4.0.13",
     "react-dom": "18.2.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.0"
   }
 }
