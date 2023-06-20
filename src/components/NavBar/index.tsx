@@ -1,20 +1,32 @@
-import Link from 'next/link';
-import { Box, HStack, Text } from '@chakra-ui/react';
+// import Link from 'next/link';
+import { Box, ButtonGroup, Button } from '@chakra-ui/react';
+import ColorModeSwitcher from './colorModeSwitcher';
+import NextLink from 'next/link';
 
 function NavBar() {
   return (
     <>
-      <HStack marginX="2vw" py={8}>
-        <Box>
-          <HStack as="ul" listStyleType="none" spacing="2vw">
-            <Link href="/">Home</Link>
+      <Box display="flex" justifyContent="flex-end" pr="5" pt="5">
+        <ColorModeSwitcher />
+      </Box>
 
-            <Link href="/about">About</Link>
+      <ButtonGroup spacing="1" size="sm" variant="ghost">
+        <NextLink href={'/'} passHref>
+          <Button>Home</Button>
+        </NextLink>
 
-            <Link href="/gallery">Gallery</Link>
-          </HStack>
-        </Box>
-      </HStack>
+        <NextLink href={'/projects'} passHref>
+          <Button>Projects</Button>
+        </NextLink>
+
+        <NextLink href={'/gallery'} passHref>
+          <Button>Gallery</Button>
+        </NextLink>
+
+        <NextLink href={'/about'} passHref>
+          <Button>About</Button>
+        </NextLink>
+      </ButtonGroup>
     </>
   );
 }
