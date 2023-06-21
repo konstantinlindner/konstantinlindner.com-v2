@@ -1,32 +1,34 @@
 // import Link from 'next/link';
-import { Box, ButtonGroup, Button } from '@chakra-ui/react';
+import { Box, ButtonGroup, Button, Flex, Spacer } from '@chakra-ui/react';
 import ColorModeSwitcher from './colorModeSwitcher';
 import NextLink from 'next/link';
 
 function NavBar() {
   return (
     <>
-      <Box display="flex" justifyContent="flex-end" pr="5" pt="5">
-        <ColorModeSwitcher />
-      </Box>
+      <Flex>
+        <ButtonGroup mx="5" my="5" spacing="1" size="sm" variant="ghost">
+          <Button as={NextLink} href={'/'}>
+            Home
+          </Button>
 
-      <ButtonGroup spacing="1" size="sm" variant="ghost">
-        <NextLink href={'/'} passHref>
-          <Button>Home</Button>
-        </NextLink>
+          <Button as={NextLink} href={'/projects'}>
+            Projects
+          </Button>
 
-        <NextLink href={'/projects'} passHref>
-          <Button>Projects</Button>
-        </NextLink>
+          <Button as={NextLink} href={'/gallery'}>
+            Gallery
+          </Button>
 
-        <NextLink href={'/gallery'} passHref>
-          <Button>Gallery</Button>
-        </NextLink>
-
-        <NextLink href={'/about'} passHref>
-          <Button>About</Button>
-        </NextLink>
-      </ButtonGroup>
+          <Button as={NextLink} href={'/about'}>
+            About
+          </Button>
+        </ButtonGroup>
+        <Spacer />
+        <Box mt="5" mr="5">
+          <ColorModeSwitcher />
+        </Box>
+      </Flex>
     </>
   );
 }
