@@ -26,8 +26,9 @@ function Home() {
 
         <Text mt="5" align="left" py="1" maxW="700">
           An aspiring full-stack developer. My stack of choice is React using
-          Typescript, NextJ and Express. I have used styling frameworks such as
-          Chakra UI, Tailwind and MUI. Experience with Vue, Svelte.
+          Typescript, NextJS and Express. I have used styling frameworks such as
+          Chakra UI, Tailwind and MUI. Experience with Vue, Svelte. Firebase,
+          Supabase, Prisma.
         </Text>
 
         <Text align="left" py="1" maxW="700">
