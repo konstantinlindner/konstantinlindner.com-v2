@@ -97,7 +97,9 @@ function Home() {
             </Hide>
 
             <Show below="sm">
-              <SocialLinkRow size="md" fontSize="2xl" />
+              <Center>
+                <SocialLinkRow size="md" fontSize="2xl" />
+              </Center>
             </Show>
           </Box>
         </Box>

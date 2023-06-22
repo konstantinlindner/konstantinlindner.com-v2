@@ -48,7 +48,7 @@ function NavBar() {
       </Hide>
 
       <Show below="sm">
-        <Box maxW="550px" py="7">
+        <Box maxW="550px" pt="7" pb="0">
           <Flex>
             <IconButton
               onClick={onToggle}
@@ -65,7 +65,7 @@ function NavBar() {
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>
-            <Stack mt="5" direction="column">
+            <Stack pt="5" pb="5" direction="column">
               <Button as={NextLink} href={'/'} size="md" variant="outline">
                 Home
               </Button>
