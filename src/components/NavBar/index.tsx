@@ -7,6 +7,7 @@ import {
   Spacer,
   Hide,
   IconButton,
+  Show,
 } from '@chakra-ui/react';
 import ColorModeSwitcher from './colorModeSwitcher';
 import NextLink from 'next/link';
@@ -15,15 +16,6 @@ import { Icon } from '@iconify/react';
 function NavBar() {
   return (
     <>
-      <Hide above="sm">
-        <IconButton
-          aria-label="Menu"
-          size="sm"
-          fontSize="xl"
-          icon={<Icon icon="mdi:menu" />}
-        ></IconButton>
-      </Hide>
-
       <Hide below="sm">
         <Box maxW="550px" pt="7" pb="10" mx="auto">
           <Flex>
@@ -49,6 +41,21 @@ function NavBar() {
           </Flex>
         </Box>
       </Hide>
+
+      <Show below="sm">
+        <Box maxW="550px" pt="7" pb="10" mx="auto">
+          <Flex>
+            <IconButton
+              aria-label="Menu"
+              size="sm"
+              fontSize="xl"
+              icon={<Icon icon="mdi:menu" />}
+            ></IconButton>
+            <Spacer />
+            <ColorModeSwitcher />
+          </Flex>
+        </Box>
+      </Show>
     </>
   );
 }

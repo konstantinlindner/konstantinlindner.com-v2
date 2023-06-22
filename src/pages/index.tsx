@@ -12,6 +12,7 @@ import {
   Hide,
   Show,
   IconButton,
+  Center,
 } from '@chakra-ui/react';
 
 function Home() {
@@ -21,23 +22,53 @@ function Home() {
         <NavBar />
 
         <Box maxW="550" mx="auto">
-          <Image
-            float="right"
-            ml="3"
-            mb="3"
-            borderRadius="full"
-            boxSize="150px"
-            src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-            fallbackSrc="/assets/profile.webp"
-            alt="Konstantin Lindner"
-          />
-          <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-          <Text whiteSpace="nowrap">
-            Junior QA Engineer @{' '}
-            <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
-              m56 Studios
-            </Link>
-          </Text>
+          <Hide below="sm">
+            <Image
+              float="right"
+              ml="3"
+              mb="3"
+              borderRadius="full"
+              boxSize="150px"
+              src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
+              fallbackSrc="/assets/profile.webp"
+              alt="Konstantin Lindner"
+            />
+          </Hide>
+
+          <Show below="sm">
+            <Image
+              mx="auto"
+              mb="3"
+              borderRadius="full"
+              boxSize="150px"
+              src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
+              fallbackSrc="/assets/profile.webp"
+              alt="Konstantin Lindner"
+            />
+          </Show>
+
+          <Hide below="sm">
+            <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
+            <Text whiteSpace="nowrap">
+              Junior QA Engineer @{' '}
+              <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
+                m56 Studios
+              </Link>
+            </Text>
+          </Hide>
+
+          <Show below="sm">
+            <Center>
+              <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>{' '}
+            </Center>
+            <Text align="center" whiteSpace="nowrap">
+              Junior QA Engineer @{' '}
+              <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
+                m56 Studios
+              </Link>
+            </Text>
+          </Show>
+
           <Text mt="5" align="left" py="1" maxW="700">
             An aspiring full-stack developer. My stack of choice is React using
             Typescript, NextJS and Express with Prisma. I also have experience
