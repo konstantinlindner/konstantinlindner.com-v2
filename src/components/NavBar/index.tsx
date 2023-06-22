@@ -55,6 +55,7 @@ function NavBar() {
               aria-label="Menu"
               variant="ghost"
               _hover={{ bg: 'null' }}
+              _active={{ bg: 'null' }}
               size="md"
               fontSize="2xl"
               icon={
