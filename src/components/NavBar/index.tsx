@@ -56,6 +56,7 @@ function NavBar() {
               variant="ghost"
               _hover={{ bg: 'null' }}
               _active={{ bg: 'null' }}
+              _focus={{ bg: 'null' }}
               size="md"
               fontSize="2xl"
               icon={

@@ -19,6 +19,7 @@ function ColorModeSwitcher({
       fontSize={fontSize}
       _hover={{ bg: 'null' }}
       _active={{ bg: 'null' }}
+      _focus={{ bg: 'null' }}
       icon={
         isDark ? (
           <Icon icon="mdi:weather-sunny" />
