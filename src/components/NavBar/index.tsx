@@ -53,7 +53,7 @@ function NavBar() {
             <IconButton
               onClick={onToggle}
               aria-label="Menu"
-              variant="ghost"
+              variant="none"
               size="md"
               fontSize="2xl"
               icon={
@@ -61,7 +61,7 @@ function NavBar() {
               }
             ></IconButton>
             <Spacer />
-            <ColorModeSwitcher size="md" fontSize="2xl" variant="ghost" />
+            <ColorModeSwitcher size="md" fontSize="2xl" variant="none" />
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>
