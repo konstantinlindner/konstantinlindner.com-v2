@@ -6,12 +6,8 @@ import {
   Image,
   Text,
   Box,
-  Flex,
-  HStack,
-  VStack,
   Hide,
   Show,
-  IconButton,
   Center,
 } from '@chakra-ui/react';
 

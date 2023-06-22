@@ -42,7 +42,7 @@ function NavBar() {
               </Button>
             </ButtonGroup>
             <Spacer />
-            <ColorModeSwitcher />
+            <ColorModeSwitcher size="sm" fontSize="xl" />
           </Flex>
         </Box>
       </Hide>
@@ -55,13 +55,13 @@ function NavBar() {
               aria-label="Menu"
               variant="ghost"
               size="md"
-              fontSize="2xl"
+              fontSize="3xl"
               icon={
                 isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />
               }
             ></IconButton>
             <Spacer />
-            <ColorModeSwitcher />
+            <ColorModeSwitcher size="md" fontSize="2xl" variant="ghost" />
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>
