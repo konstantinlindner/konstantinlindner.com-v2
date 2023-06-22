@@ -14,12 +14,13 @@ import {
   SimpleGrid,
   Flex,
   Box,
+  Link,
 } from '@chakra-ui/react';
 
 function Projects() {
   return (
     <>
-      <Box mx="10">
+      <Box pb="5" mx="10">
         <NavBar />
 
         <VStack
@@ -35,8 +36,8 @@ function Projects() {
             <Card maxW="sm">
               <CardBody>
                 <Image
-                  src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossless,ret_img,w_1200,h_675/https://blog.fit52.com/wp-content/uploads/2020/05/fit52-BlogCover-1200x675-2.jpg"
-                  alt="fit52 banner image"
+                  src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1687394922/fit52_uwhbyh.jpg"
+                  alt="fit52 card image"
                   borderRadius="lg"
                 />
                 <Stack mt="6" spacing="3">
@@ -53,9 +54,18 @@ function Projects() {
               </CardBody>
               <Divider />
               <CardFooter>
-                <ButtonGroup spacing="2">
-                  <Button variant="solid">Website</Button>
-                  <Button variant="ghost">Read More</Button>
+                <ButtonGroup spacing="5">
+                  <Button variant="solid">Read More</Button>
+                  <Button variant="link">
+                    {' '}
+                    <Link
+                      fontWeight="bold"
+                      href="https://www.fit52.com/"
+                      isExternal
+                    >
+                      Website
+                    </Link>
+                  </Button>
                 </ButtonGroup>
               </CardFooter>
             </Card>
@@ -63,8 +73,8 @@ function Projects() {
             <Card maxW="sm">
               <CardBody>
                 <Image
-                  src="https://www.pockettactics.com/wp-content/sites/pockettactics/2022/09/hanx101-trivia-apple-arcade.jpg"
-                  alt="Hanx101 banner image"
+                  src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1687394922/hanx101_sti1dt.jpg"
+                  alt="Hanx101 card image"
                   borderRadius="lg"
                 />
                 <Stack mt="6" spacing="3">
@@ -81,9 +91,14 @@ function Projects() {
               </CardBody>
               <Divider />
               <CardFooter>
-                <ButtonGroup spacing="2">
-                  <Button variant="solid">Website</Button>
-                  <Button variant="ghost">Read More</Button>
+                <ButtonGroup spacing="5">
+                  <Button variant="solid">Read More</Button>
+                  <Button variant="link">
+                    {' '}
+                    <Link href="https://www.hanx101.com/" isExternal>
+                      Website
+                    </Link>
+                  </Button>
                 </ButtonGroup>
               </CardFooter>
             </Card>
@@ -95,8 +110,8 @@ function Projects() {
             <Card maxW="sm">
               <CardBody>
                 <Image
-                  src="https://life.konstantin.app/assets/data-f06a6398.svg"
-                  alt="Lifelytics banner image"
+                  src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1687395147/lifelytics_jjtugq.webp"
+                  alt="Lifelytics card image"
                   borderRadius="lg"
                 />
                 <Stack mt="6" spacing="3">
@@ -110,9 +125,14 @@ function Projects() {
               </CardBody>
               <Divider />
               <CardFooter>
-                <ButtonGroup spacing="2">
-                  <Button variant="solid">Website</Button>
-                  <Button variant="ghost">Read More</Button>
+                <ButtonGroup spacing="5">
+                  <Button variant="solid">Read More</Button>
+                  <Button variant="link">
+                    {' '}
+                    <Link href="https://life.konstantin.app/" isExternal>
+                      Website
+                    </Link>
+                  </Button>
                 </ButtonGroup>
               </CardFooter>
             </Card>

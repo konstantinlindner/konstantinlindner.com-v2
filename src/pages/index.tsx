@@ -9,12 +9,15 @@ import {
   Flex,
   HStack,
   VStack,
+  Hide,
+  Show,
+  IconButton,
 } from '@chakra-ui/react';
 
 function Home() {
   return (
     <>
-      <Box mx="10">
+      <Box pb="10" mx="10">
         <NavBar />
 
         <Box maxW="550" mx="auto">
@@ -28,16 +31,13 @@ function Home() {
             fallbackSrc="/assets/profile.webp"
             alt="Konstantin Lindner"
           />
-
           <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-
           <Text whiteSpace="nowrap">
             Junior QA Engineer @{' '}
             <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
               m56 Studios
             </Link>
           </Text>
-
           <Text mt="5" align="left" py="1" maxW="700">
             An aspiring full-stack developer. My stack of choice is React using
             Typescript, NextJS and Express with Prisma. I also have experience
@@ -45,13 +45,11 @@ function Home() {
             frameworks, I have worked with Chakra UI, Tailwind and MUI.
             Experience with Firebase and Supabase.
           </Text>
-
           <Text align="left" py="1" maxW="700">
             As a person I am curious and optimistic, with an eye for detail and
             improvement. I&apos;m driven by always becoming better at what I do
             and set high standards for both myself and others.
           </Text>
-
           <Text align="left" py="1" maxW="700">
             Currently working on the development team for{' '}
             <Link fontWeight="bold" href="https://www.fit52.com/" isExternal>
@@ -65,7 +63,6 @@ function Home() {
             , a trivia game by Tom Hanks as well as multiple projects related to
             AI and machine learning, still unreleased.
           </Text>
-
           <Box pt="5">
             <SocialLinkRow />
           </Box>
