@@ -90,8 +90,15 @@ function Home() {
             , a trivia game by Tom Hanks as well as multiple projects related to
             AI and machine learning, still unreleased.
           </Text>
+
           <Box pt="5">
-            <SocialLinkRow />
+            <Hide below="sm">
+              <SocialLinkRow size="sm" fontSize="xl" />
+            </Hide>
+
+            <Show below="sm">
+              <SocialLinkRow size="md" fontSize="2xl" />
+            </Show>
           </Box>
         </Box>
       </Box>

@@ -8,7 +8,12 @@ interface SocialLink {
   link: string;
 }
 
-function SocialLinkRow() {
+interface SocialLinkRowProps {
+  size?: string;
+  fontSize?: string;
+}
+
+function SocialLinkRow({ size = 'sm', fontSize = 'xl' }: SocialLinkRowProps) {
   const socialLinks: SocialLink[] = [
     {
       name: 'Email',
@@ -42,7 +47,7 @@ function SocialLinkRow() {
   ];
 
   return (
-    <ButtonGroup>
+    <ButtonGroup spacing={3}>
       {socialLinks.map((link) => (
         <SocialLinkItem
           key={link.name}
@@ -50,6 +55,8 @@ function SocialLinkRow() {
           name={link.name}
           icon={link.icon}
           color={link.color}
+          size={size}
+          fontSize={fontSize}
         />
       ))}
     </ButtonGroup>

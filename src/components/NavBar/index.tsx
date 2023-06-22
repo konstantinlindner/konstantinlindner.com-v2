@@ -48,14 +48,14 @@ function NavBar() {
       </Hide>
 
       <Show below="sm">
-        <Box maxW="550px" pt="7" pb="10">
+        <Box maxW="550px" py="7">
           <Flex>
             <IconButton
               onClick={onToggle}
               aria-label="Menu"
               variant="ghost"
               size="md"
-              fontSize="3xl"
+              fontSize="2xl"
               icon={
                 isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />
               }

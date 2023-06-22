@@ -6,18 +6,20 @@ interface LinkListItemProps {
   name: string;
   icon: string;
   color?: string;
+  size: string;
+  fontSize: string;
 }
 
 function LinkListItem(props: LinkListItemProps) {
-  const { link, name, icon, color } = props;
+  const { link, name, icon, color, size, fontSize } = props;
 
   return (
     <Link rounded="full" isExternal href={link}>
       <IconButton
         aria-label={name}
         rounded="full"
-        size="sm"
-        fontSize="xl"
+        size={size}
+        fontSize={fontSize}
         _hover={{ color }}
         icon={<Icon icon={icon} />}
       />
