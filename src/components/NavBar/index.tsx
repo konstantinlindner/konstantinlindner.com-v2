@@ -54,6 +54,7 @@ function NavBar() {
               onClick={onToggle}
               aria-label="Menu"
               variant="ghost"
+              _hover={{ bg: 'null' }}
               size="md"
               fontSize="2xl"
               icon={
