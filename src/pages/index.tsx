@@ -14,7 +14,7 @@ import {
 function Home() {
   return (
     <>
-      <Box pb="10" mx="10">
+      <Box pb="10" mx="5">
         <NavBar />
 
         <Box maxW="550" mx="auto">
