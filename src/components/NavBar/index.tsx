@@ -62,6 +62,7 @@ function NavBar() {
                 isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />
               }
             ></IconButton>
+
             <Spacer />
             <ColorModeSwitcher size="md" fontSize="2xl" variant="ghost" />
           </Flex>

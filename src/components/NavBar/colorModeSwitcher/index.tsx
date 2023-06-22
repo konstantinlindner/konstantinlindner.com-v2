@@ -17,6 +17,7 @@ function ColorModeSwitcher({
       variant={variant}
       size={size}
       fontSize={fontSize}
+      _hover={{ bg: 'null' }}
       _active={{ bg: 'null' }}
       icon={
         isDark ? (
