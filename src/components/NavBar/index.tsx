@@ -48,7 +48,7 @@ function NavBar() {
       </Hide>
 
       <Show below="sm">
-        <Box maxW="550px" pt="7" pb="0">
+        <Box maxW="550px" pt="2">
           <Flex>
             <IconButton
               onClick={onToggle}
