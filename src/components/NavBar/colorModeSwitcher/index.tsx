@@ -10,6 +10,7 @@ function ColorModeSwitcher() {
       onClick={toggleColorMode}
       aria-label="Toggle color mode"
       rounded="full"
+      variant="ghost"
       size="sm"
       fontSize="xl"
       icon={
