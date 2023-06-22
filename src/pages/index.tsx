@@ -26,7 +26,6 @@ function Home() {
               borderRadius="full"
               boxSize="150px"
               src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-              fallbackSrc="/assets/profile.webp"
               alt="Konstantin Lindner"
             />
           </Hide>
@@ -38,7 +37,6 @@ function Home() {
               borderRadius="full"
               boxSize="150px"
               src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-              fallbackSrc="/assets/profile.webp"
               alt="Konstantin Lindner"
             />
           </Show>
