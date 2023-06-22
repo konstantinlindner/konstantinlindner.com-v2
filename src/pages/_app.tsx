@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../styles/theme';
 import Fonts from '../styles/fonts';
-import { client } from '../apollo';
 import { ReactNode } from 'react';
 
 const Providers = ({ children }: { readonly children: ReactNode }) => (
