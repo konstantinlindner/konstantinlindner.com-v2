@@ -1,13 +1,12 @@
 import { Icon } from '@iconify/react';
-import { IconButton, useColorMode } from '@chakra-ui/react';
+import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
 
 function ColorModeSwitcher({
   size = 'sm',
   fontSize = 'xl',
   variant = 'solid',
 }) {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const isDark = colorMode === 'dark';
+  const { toggleColorMode } = useColorMode();
 
   return (
     <IconButton
@@ -20,13 +19,10 @@ function ColorModeSwitcher({
       _hover={{ bg: 'null' }}
       _active={{ bg: 'null' }}
       _focus={{ bg: 'null' }}
-      icon={
-        isDark ? (
-          <Icon icon="mdi:weather-sunny" />
-        ) : (
-          <Icon icon="mdi:weather-night" />
-        )
-      }
+      icon={useColorModeValue(
+        <Icon icon="mdi:weather-night" />,
+        <Icon icon="mdi:weather-sunny" />,
+      )}
     />
   );
 }

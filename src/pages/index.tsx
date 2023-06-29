@@ -1,5 +1,5 @@
 import NavBar from '../components/NavBar';
-import SocialLinkRow from '@/components/SocialLinkRow';
+import SocialLinkRow from '../components/SocialLinkRow';
 import {
   Link,
   Heading,
@@ -10,6 +10,7 @@ import {
   Show,
   Center,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 function Home() {
   return (
@@ -63,42 +64,59 @@ function Home() {
             </Text>
           </Show>
 
-          <Text mt="5" align="left" py="1" maxW="700">
-            An aspiring full-stack developer. My stack of choice is React using
-            Typescript, NextJS and Express with Prisma. I also have experience
-            with frameworks such as Vue and Svelte. When it comes to CSS
-            frameworks, I have worked with Chakra UI, Tailwind and MUI.
-            Experience with Firebase and Supabase.
-          </Text>
-          <Text align="left" py="1" maxW="700">
-            As a person I am curious and optimistic, with an eye for detail and
-            improvement. I&apos;m driven by always becoming better at what I do
-            and set high standards for both myself and others.
-          </Text>
-          <Text align="left" py="1" maxW="700">
-            Currently working on the development team for{' '}
-            <Link fontWeight="bold" href="https://www.fit52.com/" isExternal>
-              fit52
-            </Link>
-            , a fitness app from Carrie Underwood. Previous projects include
-            working on{' '}
-            <Link fontWeight="bold" href="https://www.hanx101.com/" isExternal>
-              Hanx101
-            </Link>
-            , a trivia game by Tom Hanks as well as multiple projects related to
-            AI and machine learning, still unreleased.
-          </Text>
+          <Box
+            as={motion.div}
+            initial={{
+              y: 10,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.1 },
+            }}
+          >
+            <Text mt="5" align="left" py="1" maxW="700">
+              An aspiring full-stack developer. My stack of choice is React
+              using Typescript, NextJS and Express with Prisma. I also have
+              experience with frameworks such as Vue and Svelte. When it comes
+              to CSS frameworks, I have worked with Chakra UI, Tailwind and MUI.
+              Experience with Firebase and Supabase.
+            </Text>
+            <Text align="left" py="1" maxW="700">
+              As a person I am curious and optimistic, with an eye for detail
+              and improvement. I&apos;m driven by always becoming better at what
+              I do and set high standards for both myself and others.
+            </Text>
+            <Text align="left" py="1" maxW="700">
+              Currently working on the development team for{' '}
+              <Link fontWeight="bold" href="https://www.fit52.com/" isExternal>
+                fit52
+              </Link>
+              , a fitness app from Carrie Underwood. Previous projects include
+              working on{' '}
+              <Link
+                fontWeight="bold"
+                href="https://www.hanx101.com/"
+                isExternal
+              >
+                Hanx101
+              </Link>
+              , a trivia game by Tom Hanks as well as multiple projects related
+              to AI and machine learning, still unreleased.
+            </Text>
 
-          <Box pt="5">
-            <Hide below="sm">
-              <SocialLinkRow size="sm" fontSize="xl" />
-            </Hide>
+            <Box pt="5">
+              <Hide below="sm">
+                <SocialLinkRow size="sm" fontSize="xl" />
+              </Hide>
 
-            <Show below="sm">
-              <Center>
-                <SocialLinkRow size="md" fontSize="2xl" />
-              </Center>
-            </Show>
+              <Show below="sm">
+                <Center>
+                  <SocialLinkRow size="md" fontSize="2xl" />
+                </Center>
+              </Show>
+            </Box>
           </Box>
         </Box>
       </Box>

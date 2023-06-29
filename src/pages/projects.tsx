@@ -14,6 +14,7 @@ import {
   SimpleGrid,
   Box,
   Link,
+  Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -27,6 +28,7 @@ function Projects() {
     fit52: false,
     hanx101: false,
     lifelytics: false,
+    bio: false,
   });
 
   const handleFlip = (cardName: string) => {
@@ -45,6 +47,8 @@ function Projects() {
           <Heading>Professional Projects</Heading>
 
           <SimpleGrid columns={[1, null, 2]} spacing={4}>
+            {/* fit52 card */}
+
             <Card
               as={motion.div}
               animate={{
@@ -116,7 +120,6 @@ function Projects() {
                     Read More
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://www.fit52.com/" isExternal>
                       Website
                     </Link>
@@ -137,7 +140,6 @@ function Projects() {
                     Back
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://www.fit52.com/" isExternal>
                       Website
                     </Link>
@@ -145,6 +147,8 @@ function Projects() {
                 </ButtonGroup>
               </CardFooter>
             </Card>
+
+            {/* Hanx101 card */}
 
             <Card
               as={motion.div}
@@ -218,7 +222,6 @@ function Projects() {
                     Read More
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://www.hanx101.com/" isExternal>
                       Website
                     </Link>
@@ -239,7 +242,6 @@ function Projects() {
                     Back
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://www.hanx101.com/" isExternal>
                       Website
                     </Link>
@@ -252,6 +254,8 @@ function Projects() {
           <Heading>Personal Projects</Heading>
 
           <SimpleGrid columns={[1, null, 2]} spacing={4}>
+            {/* Lifelytics card */}
+
             <Card
               as={motion.div}
               animate={{
@@ -325,7 +329,6 @@ function Projects() {
                     Read More
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://life.konstantin.app/" isExternal>
                       Website
                     </Link>
@@ -349,9 +352,122 @@ function Projects() {
                     Back
                   </Button>
                   <Button variant="link">
-                    {' '}
                     <Link href="https://life.konstantin.app/" isExternal>
                       Website
+                    </Link>
+                  </Button>
+                </ButtonGroup>
+              </CardFooter>
+            </Card>
+
+            {/* konstantin.bio card */}
+
+            <Card
+              as={motion.div}
+              animate={{
+                rotateY: isRotated.bio ? 180 : 0,
+                transition: { duration: 0.35 },
+              }}
+              maxW="sm"
+            >
+              <CardBody
+                display={isRotated.bio ? 'none' : 'block'}
+                as={motion.div}
+                animate={{
+                  opacity: isRotated.bio ? 0 : 1,
+                }}
+              >
+                <Image
+                  src="https://media.giphy.com/media/TFUhfEuvjIY2PBUPK5/giphy.gif"
+                  alt="konstantin.bio card image"
+                  borderRadius="lg"
+                />
+                <Stack mt="6" spacing="3">
+                  <Heading size="md">konstantin.bio</Heading>
+
+                  <Text>A link in bio type personal website.</Text>
+                </Stack>
+              </CardBody>
+
+              <CardBody
+                display={isRotated.bio ? 'block' : 'none'}
+                as={motion.div}
+                animate={{
+                  opacity: isRotated.bio ? 1 : 0,
+                }}
+                transform="rotateY(180deg)"
+              >
+                <Stack mt="6" spacing="3">
+                  <Heading size="md">konstantin.bio</Heading>
+                  <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                  </Text>
+                </Stack>
+              </CardBody>
+
+              <Divider />
+
+              <CardFooter
+                display={isRotated.bio ? 'none' : 'block'}
+                as={motion.div}
+                animate={{
+                  opacity: isRotated.bio ? 0 : 1,
+                }}
+              >
+                <Flex>
+                  <Button variant="solid" onClick={() => handleFlip('bio')}>
+                    Read More
+                  </Button>
+                  <ButtonGroup ml="auto" spacing="5">
+                    <Button variant="link">
+                      <Link
+                        href="https://github.com/konstantinlindner/konstantin.bio"
+                        isExternal
+                      >
+                        Github
+                      </Link>
+                    </Button>
+                    <Button variant="link">
+                      <Link href="https://konstantin.bio/" isExternal>
+                        Website
+                      </Link>
+                    </Button>
+                  </ButtonGroup>
+                </Flex>
+              </CardFooter>
+
+              <CardFooter
+                display={isRotated.bio ? 'block' : 'none'}
+                as={motion.div}
+                animate={{
+                  opacity: isRotated.bio ? 1 : 0,
+                }}
+                transform="rotateY(180deg)"
+              >
+                <ButtonGroup spacing="5">
+                  <Button variant="solid" onClick={() => handleFlip('bio')}>
+                    Back
+                  </Button>
+                  <Button variant="link">
+                    <Link href="https://konstantin.bio/" isExternal>
+                      Website
+                    </Link>
+                  </Button>
+                  <Button variant="link">
+                    <Link
+                      href="https://github.com/konstantinlindner/konstantin.bio"
+                      isExternal
+                    >
+                      Github
                     </Link>
                   </Button>
                 </ButtonGroup>
