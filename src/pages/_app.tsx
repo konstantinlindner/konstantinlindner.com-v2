@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../styles/theme';
 import Fonts from '../styles/fonts';
 import { ReactNode } from 'react';
+import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 const Providers = ({ children }: { readonly children: ReactNode }) => (
   <ChakraProvider theme={theme}>{children}</ChakraProvider>
@@ -14,10 +15,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   //   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <Providers>
-      <Fonts />
-      <Component {...pageProps} />
-    </Providers>
+    <>
+      <GoogleAnalytics trackPageViews />
+      <Providers>
+        <Fonts />
+        <Component {...pageProps} />
+      </Providers>
+    </>
   );
 };
 
