@@ -18,7 +18,18 @@ function Home() {
       <Box pb="5" mx="5">
         <NavBar />
 
-        <Box maxW="550" mx="auto">
+        <Box
+          as={motion.div}
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 0.8, delay: 0.1 },
+          }}
+          maxW="550"
+          mx="auto"
+        >
           <Hide below="sm">
             <Image
               float="right"
