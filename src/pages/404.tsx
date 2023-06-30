@@ -1,18 +1,5 @@
 import NavBar from '../components/NavBar';
-import SocialLinkRow from '../components/SocialLinkRow';
-import {
-  Link,
-  Heading,
-  Image,
-  Text,
-  Box,
-  Hide,
-  Show,
-  Center,
-  Button,
-  VStack,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Heading, Text, Box, Button, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { Icon } from '@iconify/react';
 
