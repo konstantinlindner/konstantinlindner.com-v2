@@ -1,6 +1,6 @@
 import NavBar from '../components/NavBar';
 import ProjectsDisplay from '../components/ProjectsDisplay';
-import { Heading, VStack, Box } from '@chakra-ui/react';
+import { VStack, Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 function Projects() {

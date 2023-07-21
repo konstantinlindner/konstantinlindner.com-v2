@@ -60,7 +60,7 @@ function ProjectItem(props: ProjectItemProps) {
         rotateY: isRotated.card ? 180 : 0,
         transition: { duration: 0.35 },
       }}
-      w="sm"
+      maxW="sm"
       h="xl"
     >
       <CardBody
