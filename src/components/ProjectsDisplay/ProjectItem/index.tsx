@@ -103,17 +103,13 @@ function ProjectItem(props: ProjectItemProps) {
           <Button variant="solid" onClick={() => handleFlip('card')}>
             Read More
           </Button>
-          <ButtonGroup ml="auto" spacing="5">
-            <Button variant="link">
-              <Link href={link1} isExternal>
-                {linkLabel1}
-              </Link>
-            </Button>
-            <Button variant="link">
-              <Link href={link2} isExternal>
-                {linkLabel2}
-              </Link>
-            </Button>
+          <ButtonGroup ml="auto" my="auto" spacing="5">
+            <Link href={link1} isExternal>
+              {linkLabel1}
+            </Link>
+            <Link href={link2} isExternal>
+              {linkLabel2}
+            </Link>
           </ButtonGroup>
         </Flex>
       </CardFooter>
@@ -131,16 +127,12 @@ function ProjectItem(props: ProjectItemProps) {
             Back
           </Button>
           <ButtonGroup ml="auto" spacing="5">
-            <Button variant="link">
-              <Link href={link1} isExternal>
-                {linkLabel1}
-              </Link>
-            </Button>
-            <Button variant="link">
-              <Link href={link2} isExternal>
-                {linkLabel2}
-              </Link>
-            </Button>
+            <Link href={link1} isExternal>
+              {linkLabel1}
+            </Link>
+            <Link href={link2} isExternal>
+              {linkLabel2}
+            </Link>
           </ButtonGroup>
         </Flex>
       </CardFooter>
