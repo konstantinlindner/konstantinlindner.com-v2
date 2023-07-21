@@ -24,10 +24,10 @@ interface ProjectItemProps {
   imgUrl: string;
   frontText: string;
   backText: string;
-  link1: string;
-  linkLabel1: string;
-  link2: string;
-  linkLabel2: string;
+  link1?: string;
+  linkLabel1?: string;
+  link2?: string;
+  linkLabel2?: string;
 }
 
 function ProjectItem(props: ProjectItemProps) {

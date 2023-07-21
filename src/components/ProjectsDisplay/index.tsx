@@ -6,10 +6,10 @@ interface projectItem {
   imgUrl: string;
   frontText: string;
   backText: string;
-  link1: string;
-  linkLabel1: string;
-  link2: string;
-  linkLabel2: string;
+  link1?: string;
+  linkLabel1?: string;
+  link2?: string;
+  linkLabel2?: string;
 }
 
 function projectsDisplay() {
@@ -27,8 +27,6 @@ function projectsDisplay() {
       backText: `fit52 Back Text`,
       link1: 'https://www.fit52.com/',
       linkLabel1: 'Website',
-      link2: 'https://github.com/M56-Studios',
-      linkLabel2: 'Github',
     },
     {
       name: 'hanx101',
@@ -43,8 +41,6 @@ function projectsDisplay() {
       backText: `Hanx101 Back Text`,
       link1: 'https://www.hanx101.com/',
       linkLabel1: 'Website',
-      link2: 'https://github.com/Blueline-Studios',
-      linkLabel2: 'Github',
     },
   ];
 
