@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 function Projects() {
   return (
     <>
-      <Box pb="5" mx="10">
+      <Box pb="5" mx="5">
         <NavBar />
 
         <VStack
