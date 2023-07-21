@@ -42,6 +42,13 @@ function projectsDisplay() {
       link1: 'https://www.hanx101.com/',
       linkLabel1: 'Website',
     },
+    {
+      name: 'AI Projects',
+      imgUrl:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fhd-background.com%2Fwp-content%2Fuploads%2F2019%2F09%2FBest-high-resolution-desktop-backgrounds-1920p.jpg&f=1&nofb=1&ipt=c804ae66246e288948d7c4a66b52c76ee56ffa78dfacf331f6d83a6f0fdde562&ipo=images',
+      frontText: `AI related projects`,
+      backText: `AI Projects Back Text`,
+    },
   ];
 
   const personalProjects: projectItem[] = [
@@ -60,7 +67,8 @@ function projectsDisplay() {
     },
     {
       name: 'konstantin.bio',
-      imgUrl: 'https://media.giphy.com/media/TFUhfEuvjIY2PBUPK5/giphy.gif',
+      imgUrl:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fhd-background.com%2Fwp-content%2Fuploads%2F2019%2F09%2FBest-high-resolution-desktop-backgrounds-1920p.jpg&f=1&nofb=1&ipt=c804ae66246e288948d7c4a66b52c76ee56ffa78dfacf331f6d83a6f0fdde562&ipo=images',
       frontText: `A link in bio type personal website.`,
       backText: `Bio Back Text`,
       link1: 'https://konstantin.bio/',
@@ -68,13 +76,22 @@ function projectsDisplay() {
       link2: 'https://github.com/konstantinlindner/konstantin.bio',
       linkLabel2: 'Github',
     },
+    {
+      name: 'Portfolio',
+      imgUrl:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fhd-background.com%2Fwp-content%2Fuploads%2F2019%2F09%2FBest-high-resolution-desktop-backgrounds-1920p.jpg&f=1&nofb=1&ipt=c804ae66246e288948d7c4a66b52c76ee56ffa78dfacf331f6d83a6f0fdde562&ipo=images',
+      frontText: `The very site you are browsing right now.`,
+      backText: `Portfolio Back Text`,
+      link1: 'https://github.com/konstantinlindner/konstantinlindner.com',
+      linkLabel1: 'Github',
+    },
   ];
 
   return (
     <>
       <Heading>Professional Projects</Heading>
 
-      <SimpleGrid columns={[1, null, 2]} spacing={4}>
+      <SimpleGrid columns={[1, 1, 1, 2, 3]} spacing={5}>
         {professionalProjects.map((projectItem) => (
           <ProjectItem
             key={projectItem.name}
@@ -92,7 +109,7 @@ function projectsDisplay() {
 
       <Heading>Personal Projects</Heading>
 
-      <SimpleGrid columns={[1, null, 2]} spacing={4}>
+      <SimpleGrid columns={[1, 1, 1, 2, 3]} spacing={5}>
         {personalProjects.map((projectItem) => (
           <ProjectItem
             key={projectItem.name}
