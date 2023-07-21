@@ -60,7 +60,8 @@ function ProjectItem(props: ProjectItemProps) {
         rotateY: isRotated.card ? 180 : 0,
         transition: { duration: 0.35 },
       }}
-      maxW="sm"
+      w="sm"
+      h="xl"
     >
       <CardBody
         display={isRotated.card ? 'none' : 'block'}
@@ -126,7 +127,7 @@ function ProjectItem(props: ProjectItemProps) {
           <Button variant="solid" onClick={() => handleFlip('card')}>
             Back
           </Button>
-          <ButtonGroup ml="auto" spacing="5">
+          <ButtonGroup ml="auto" my="auto" spacing="5">
             <Link href={link1} isExternal>
               {linkLabel1}
             </Link>
