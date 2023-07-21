@@ -29,7 +29,7 @@ function projectsDisplay() {
       linkLabel1: 'Website',
     },
     {
-      name: 'hanx101',
+      name: 'Hanx101',
       imgUrl:
         'https://res.cloudinary.com/dhiamlbjm/image/upload/v1687394922/hanx101_sti1dt.jpg',
       frontText: `An engaging trivia game developed by actor Tom Hanks. With
