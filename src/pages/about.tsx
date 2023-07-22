@@ -17,7 +17,7 @@ function About() {
             opacity: 1,
             transition: { duration: 0.8, delay: 0.1 },
           }}
-          maxW="550"
+          maxW="600"
           mx="auto"
         >
           <Heading>I am</Heading>

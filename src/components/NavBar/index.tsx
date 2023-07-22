@@ -21,7 +21,7 @@ function NavBar() {
   return (
     <>
       <Hide below="sm">
-        <Box maxW="550px" pt="7" pb="10" mx="auto">
+        <Box maxW="600px" pt="7" pb="10" mx="auto">
           <Flex>
             <ButtonGroup ml="-2.5" spacing="1" size="sm" variant="ghost">
               <Button as={NextLink} href={'/'}>

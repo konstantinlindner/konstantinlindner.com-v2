@@ -27,7 +27,7 @@ function Home() {
             opacity: 1,
             transition: { duration: 0.8, delay: 0.1 },
           }}
-          maxW="550"
+          maxW="600"
           mx="auto"
         >
           <Hide below="sm">
