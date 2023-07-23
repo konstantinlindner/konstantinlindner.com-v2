@@ -56,7 +56,7 @@ function Home() {
           <Hide below="sm">
             <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
             <Text whiteSpace="nowrap">
-              Junior QA Engineer @{' '}
+              QA Engineer @{' '}
               <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
                 m56 Studios
               </Link>
@@ -65,10 +65,10 @@ function Home() {
 
           <Show below="sm">
             <Center>
-              <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>{' '}
+              <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
             </Center>
             <Text align="center" whiteSpace="nowrap">
-              Junior QA Engineer @{' '}
+              QA Engineer @{' '}
               <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
                 m56 Studios
               </Link>
@@ -92,7 +92,7 @@ function Home() {
               using Typescript, NextJS and Express with Prisma. I also have
               experience with frameworks such as Vue and Svelte. When it comes
               to CSS frameworks, I have worked with Chakra UI, Tailwind and MUI.
-              Experience with Firebase and Supabase.
+              Backend experience with Firebase, Supabase and Laravel.
             </Text>
             <Text align="left" py="1" maxW="700">
               As a person I am curious and optimistic, with an eye for detail
