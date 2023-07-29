@@ -1,10 +1,15 @@
 import NavBar from '../components/NavBar';
 import SocialLinkRow from '../components/SocialLinkRow';
 import ExperienceItem from '../components/ExperienceItem';
-import { Box, Heading, Text, Link } from '@chakra-ui/react';
+import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import dedent from 'dedent';
 
 function About() {
+  const iAmText = `An extremely curious, positive and optimistic person with an eye for detail and improvement. I am almos always happy, spirited and ready to go on whatever journey awaits next, seldom you will hear me saying the word no. Some of my biggest strengths are finding areas of improvement, big or small, and seeing the possible solutions to a specific problem. Furthermore, data and statistics are big interests and passions of mine. I love creating Excel-sheets filled to the brim with formulas and charts to visualize important data.
+
+  Another equally fundamental part in my life is getting to know and working with people focusing on building great relationships and real connections. When evaluating a workplace, how well the employees are operating as a team, helping out each other and working together to achieve things are some of my main areas of consideration and attention.`;
+
   return (
     <>
       <Box pb="5" mx="5">
@@ -49,30 +54,11 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="1">
+            <Heading size="lg" color={'#eb3a34'} mb="2">
               I am
             </Heading>
 
-            <Text py="1">
-              An extremely curious, positive and optimistic person with an eye
-              for detail and improvement. I am almost always happy, spirited and
-              ready to go on whatever journey awaits next, seldom you will hear
-              me saying the word no. Some of my biggest strengths are finding
-              areas of improvement, big or small, and seeing the possible
-              solutions to a specific problem. Furthermore, data and statistics
-              are big interests and passions of mine. I love creating
-              Excel-sheets filled to the brim with formulas and charts to
-              visualize important data.
-            </Text>
-
-            <Text py="1">
-              Another equally fundamental part in my life is getting to know and
-              working with people, focusing on building great relationships and
-              real connections. When evaluating a workplace, how well the
-              employees are operating as a team, helping out each other and
-              working together to achieve things are some of my main areas of
-              consideration and attention.
-            </Text>
+            <Text style={{ whiteSpace: 'pre-line' }}>{dedent(iAmText)}</Text>
           </Box>
 
           <Box
@@ -88,81 +74,57 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="1">
+            <Heading size="lg" color={'#eb3a34'} mb="3">
               Selected Work Experience
             </Heading>
 
-            <ExperienceItem
-              link="https://m56studios.com/"
-              where="m56 Studios"
-              what="QA Engineer"
-              date="Apr 2022 - Present"
-              content="- Working on the development team for fit52, a fitness app from
-                Carrie Underwood.
+            <VStack spacing="5">
+              <ExperienceItem
+                link="https://m56studios.com/"
+                where="m56 Studios"
+                what="QA Engineer"
+                date="Apr 2022 - Present"
+                content="At m56 Studios, I am an integral part of multiple projects, contributing to various exciting ventures. Firstly, I play a crucial role in the development team for fit52, a fitness app by Carrie Underwood. As a QA Engineer, I ensure the app's code quality by reviewing and approving code changes for both the front-end and back-end portions of the mobile application. My testing approach involves a combination of manual and automated testing techniques, where I create automated tests using tools like Detox and Maestro to cover testing on iOS and Android.
+                \n\n
+                In addition to fit52, I am also involved in working on the content management tool for Hanx101 Trivia, an exclusive trivia game on Apple Arcade, by Tom Hanks. My contributions to this project involve ensuring smooth functionality and effective content management for the best gaming experience.
+                \n\n
+                Furthermore, I am actively engaged in developing AI tools for other projects built on GPT-4 and other language models, as well as vector databases such as Pinecone. These cutting-edge technologies are at the forefront of innovation, and I am excited to be a part of their development.
+                \n\n
+                Beyond testing and development, I also take charge of bug and ticket triage, quickly addressing issues and implementing necessary content changes. My dedication extends to refining the QA process and establishing efficient testing schedules while maintaining essential process documentation.
+                \n\n
+                Being part of m56 Studios has provided me with invaluable experiences in a dynamic and forward-thinking environment. Collaborating on projects like fit52 and Hanx101 Trivia, and exploring AI advancements, has expanded my skill set and passion for creating high-quality software products. I take pride in contributing to projects that entertain and add value to users' lives, and I am eager to continue making meaningful contributions to the tech industry."
+              />
 
-                - Responsible for reviewing and approving code changes for both
-                front-end and back-end portions of the mobile application,
-                utilizing manual as well as automated testing.
+              <ExperienceItem
+                link="https://inet.se/"
+                where="Inet AB"
+                what="Logistics Coordinator"
+                date="Aug 2020 - Nov 2021"
+                content="During my tenure at Inet AB, I served as a dedicated and full-time Logistics Coordinator at Sweden's most trusted and beloved computer and technology retailer.
+                \n\n
+                As Logistics Coordinator, I played a vital role in overseeing deliveries from manufacturers and distributors to our warehouse. I efficiently managed internal shipments and resolved any issues that arose with shipping agents. My responsibilities also extended to handling shipments of dangerous goods, ensuring compliance with regulations, and efficiently processing compensation claims in the event of lost or damaged goods.
+                \n\n
+                In this dynamic role, I collaborated closely with our warehouse team and freight partners to ensure seamless logistics operations. Additionally, I actively engaged with end customers, providing exceptional customer service when deliveries faced delays or shipping concerns arose. My problem-solving skills and attention to detail proved invaluable in navigating logistical obstacles and delivering a positive experience to our customers.
+                \n\n
+                An exciting aspect of my role was collaborating closely with the in-house development team to enhance our internal programs and tools. This collaboration allowed us to optimize and streamline logistics processes, improving overall efficiency and effectiveness.
+                \n\n
+                Working at Inet AB provided me with a valuable experience in a fast-paced and customer-centric environment. My role as a Logistics Coordinator allowed me to contribute significantly to the company's success, ensuring smooth and reliable logistics operations while delivering outstanding service to our customers. The opportunity to work with a dedicated team and contribute to the development of internal systems enriched my skill set and fueled my passion for technology and logistics."
+              />
 
-                - Automated testing includes writing automated tests in tools like
-                Detox and Maestro for testing on iOS, Android and web platforms.
-
-                - Other responsibilities include bug and ticket triage, content
-                changes, developing the QA process and testing schedules as well
-                as documentation.
-
-                - Agile Methodologies · Scrum · Code Review · GitHub and Git ·
-                TypeScript and JavaScript · React"
-            />
-
-            <ExperienceItem
-              link="https://inet.se/"
-              where="Inet AB"
-              what="Logistics Coordinator"
-              date="Aug 2020 - Nov 2021"
-              content="- Solely employed full-time as a logistics coordinator at Inet,
-              Sweden`s most trusted and loved computer and technology retailer
-              (similar to NCIX or Micro Center).
-
-                - Responsible for deliveries from manufacturers and distributors
-                to our warehouse, internal shipments, as well as resolving any
-                issues with shipping agents. Other tasks include declaring
-                shipments of dangerous goods and making compensation claims in
-                case of lost or damaged goods.
-
-                - I worked closely with our warehouse, freight partners as well as
-                with end customers when deliveries were delayed, shipping
-                concerns arose or other logistical obstacles needed to be
-                solved.
-
-                - Other responsibilities include bug and ticket triage, content
-                changes, developing the QA process and testing schedules as well
-                as documentation.
-
-                - Worked closely with the in-house dev team to develop and improve
-                our internal programs and tools."
-            />
-
-            <ExperienceItem
-              link="https://inet.se/"
-              where="Inet AB"
-              what="Technical Advisor"
-              date="Jun 2018 - Aug 2020"
-              content="- Solely employed full-time as a logistics coordinator at Inet,
-              Sweden`s most trusted and loved computer and technology retailer
-              (similar to NCIX or Micro Center).
-
-                - Helping customers with technical advice pre-sale,
-                troubleshooting and support after-sale as well as mixed
-                administrative work. Did both first- and second-line support.
-
-                - Mainly focused on building custom systems for both private and
-                business needs. Computers built after spec, networks and smart
-                home were my focus areas.
-
-                - Was awarded the honorable Suverän Service by a mystery shopper
-                hired by Better Business Worldwide. See more info below."
-            />
+              <ExperienceItem
+                link="https://inet.se/"
+                where="Inet AB"
+                what="Technical Advisor"
+                date="Jun 2018 - Aug 2020"
+                content="As a Technical Advisor, I provided expert technical assistance to customers, offering pre-sale advice, troubleshooting support, and after-sale help. Tasks included picking components for custom computer systems for individuals and businesses, from gaming setups to advanced machines for 3D rendering, video editing, machine learning and audio production. I also specialized in networks, putting together corporate systems with Ubiquiti components as well as smart home setups.
+                \n\n
+                My dedication to providing excellent customer service was recognized when I was awarded the honorable Suverän Service commendation. This recognition came from a mystery shopper hired by Better Business Worldwide, and it highlighted my commitment to ensuring a positive and memorable customer experience.
+                \n\n
+                Working at Inet AB provided me with a rewarding experience, allowing me to combine my passion for technology with a focus on customer satisfaction. The opportunity to assist customers in overcoming technical challenges and finding suitable solutions enriched my understanding of diverse technology-related needs and preferences.
+                \n\n
+                My role as a Technical Advisor at Inet AB significantly contributed to my professional growth. The collaborative work environment and emphasis on customer-centricity instilled in me a strong sense of accomplishment. The skills and insights gained during this tenure continue to shape my approach to customer service and technical problem-solving, making this role a significant and memorable chapter in my career journey."
+              />
+            </VStack>
           </Box>
 
           <Box
@@ -178,36 +140,35 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="1">
+            <Heading size="lg" color={'#eb3a34'} mb="3">
               Education
             </Heading>
 
-            <ExperienceItem
-              link="https://hermods.se/"
-              where="Hermods"
-              what="Biology"
-              date="2023"
-              content="Studied biology."
-            />
+            <VStack spacing="5">
+              <ExperienceItem
+                link="https://hermods.se/"
+                where="Hermods"
+                what="Biology"
+                date="2023"
+                content="During my time at Hermods, one of Sweden's oldest educational institutions, I had the opportunity to delve into the fascinating world of biology. The program provided a comprehensive and hands-on approach to understanding the complexities of life and the natural world. From the cellular level to ecological systems, the coursework covered a wide range of topics, equipping me with a solid foundation in biological principles."
+              />
 
-            <ExperienceItem
-              link="https://www.udemy.com/course/the-complete-javascript-course/"
-              where="Udemy"
-              what="The Complete JavaScript Course"
-              date="2022"
-              content="Enrolled in the most complete and in-depth JavaScript course on
-              Udemy."
-            />
+              <ExperienceItem
+                link="https://www.udemy.com/course/the-complete-javascript-course/"
+                where="Udemy"
+                what="The Complete JavaScript Course"
+                date="2022"
+                content='In 2022, as part of my training at m56 Studios, I completed "The Complete JavaScript Course" on Udemy. Taught by a knowledgeable instructor, the course covered JavaScript fundamentals to advanced concepts like React and Node.js. Hands-on projects and a supportive team environment at m56 Studios accelerated my growth as a developer. This course was a pivotal step in my professional journey, empowering me with valuable skills for web development and sparking a passion for continuous learning in the tech industry.'
+              />
 
-            <ExperienceItem
-              link="https://donnergymnasiet.se/"
-              where="Donnergymnasiet"
-              what="Economics & Law"
-              date="2015 - 2018"
-              content="Enrolled in the Economics and Law program at one of the top
-              schools in Gothenburg. I was also engaged in several school
-              clubs and organizations. Graduated June 2018."
-            />
+              <ExperienceItem
+                link="https://donnergymnasiet.se/"
+                where="Donnergymnasiet"
+                what="Economics & Law"
+                date="2015 - 2018"
+                content="Enrolled in the prestigious Economics and Law program at Donnergymnasiet, a top school in Gothenburg, from 2015 to 2018. Actively participated in various school clubs and organizations. Graduated in June 2018, this program provided an excellent educational foundation in the fields of economics and law, preparing me for future academic pursuits and professional endeavors."
+              />
+            </VStack>
           </Box>
 
           <Box
@@ -223,30 +184,29 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="1">
+            <Heading size="lg" color={'#eb3a34'} mb="3">
               Certifications & Awards
             </Heading>
 
-            <ExperienceItem
-              link="https://www.betterbusiness.se/"
-              where="Better Business World Wide"
-              what="Suverän Service"
-              date="Dec 2020"
-              content="I was awarded the commendation Suverän Service by a mystery
-              shopper hired by Better Business. The motivation was: Konstantin
-              sounded very kind, trustworthy and listened to me as a customer.
-              He really did all he could to help me with my problem. He had a
-              nice tone and it felt like talking to a friend. I would gladly
-              have bought something just because I got to talk to this employee."
-            />
+            <VStack spacing="5">
+              <ExperienceItem
+                link="https://www.betterbusiness.se/"
+                where="Better Business"
+                what="Suverän Service"
+                date="Dec 2020"
+                content='I received the rare and prestigious "Suverän Service" commendation from Better Business World Wide, as a mystery shopper recognized my exceptional customer service skills. 
+                \n\n
+                The motivation behind the commendation read: "Konstantin displayed remarkable kindness, trustworthiness, and attentiveness to my needs as a customer. His dedication in resolving my issue went above and beyond, making our interaction feel like a conversation with a friend. I was so impressed that I would have happily made a purchase solely based on the positive experience of speaking with this outstanding employee."'
+              />
 
-            <ExperienceItem
-              link="https://www.ielts.org/"
-              where="IELTS Official"
-              what="8.5 Overall Band Score"
-              date="Jun 2023"
-              content="On IELTS English test I received a 8.5 Overall band score out of a maximum of 9. https://www.ielts.org/for-test-takers/how-ielts-is-scored"
-            />
+              <ExperienceItem
+                link="https://www.ielts.org/"
+                where="IELTS Official"
+                what="8.5 Overall Band Score"
+                date="Jun 2023"
+                content="In June 2023, I took the IELTS English test with IELTS Official and achieved an overall band score of 8.5 out of 9. This accomplishment reflects my strong English language proficiency in Listening, Reading, Writing, and Speaking. I am proud of this achievement as it opens up opportunities for academic and professional growth in diverse international settings."
+              />
+            </VStack>
           </Box>
 
           <Box
