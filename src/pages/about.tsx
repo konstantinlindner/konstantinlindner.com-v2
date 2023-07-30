@@ -3,11 +3,20 @@ import SocialLinkRow from '../components/SocialLinkRow';
 import ExperienceItem from '../components/ExperienceItem';
 import LanguageItem from '../components/LanguageItem';
 
-import { Box, Heading, Text, VStack, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Text,
+  VStack,
+  Image,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import dedent from 'dedent';
 
 function About() {
+  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
+
   const iAmText = `A curious and optimistic full-stack developer, passionate about technology and data. Collaborating on exciting projects, building real connections, and embracing challenges drive me.
 
   Currently, I'm fortunate to be part of the development team for fit52, a cutting-edge fitness app created by none other than the amazing Carrie Underwood. It's an exciting project that fuels my desire to push boundaries and deliver the best possible results. In the past, I've been involved in creating the thrilling trivia game, Hanx101, in collaboration with the talented Tom Hanks. Additionally, I've had the privilege of contributing to various AI and machine learning projects, which are yet to be unveiled to the world.

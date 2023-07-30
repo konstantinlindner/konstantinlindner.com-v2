@@ -20,27 +20,25 @@ function NavBar() {
 
   return (
     <>
-      <Hide below="sm">
-        <Box maxW="600px" pt="7" pb="10" mx="auto">
-          <Flex>
-            <ButtonGroup ml="-2.5" spacing="1" size="sm" variant="ghost">
-              <Button as={NextLink} href={'/'}>
-                Home
-              </Button>
+      <Box maxW="600px" pt="7" pb="10" mx="auto">
+        <Flex>
+          <ButtonGroup ml="-2.5" spacing="1" size="sm" variant="ghost">
+            <Button as={NextLink} href={'/'}>
+              Home
+            </Button>
 
-              <Button as={NextLink} href={'/projects'}>
-                Projects
-              </Button>
+            <Button as={NextLink} href={'/projects'}>
+              Projects
+            </Button>
 
-              <Button as={NextLink} href={'/about'}>
-                About
-              </Button>
-            </ButtonGroup>
-            <Spacer />
-            <ColorModeSwitcher size="sm" fontSize="xl" />
-          </Flex>
-        </Box>
-      </Hide>
+            <Button as={NextLink} href={'/about'}>
+              About
+            </Button>
+          </ButtonGroup>
+          <Spacer />
+          <ColorModeSwitcher size="sm" fontSize="xl" />
+        </Flex>
+      </Box>
 
       <Show below="sm">
         <Box maxW="550px" pt="2">
@@ -76,15 +74,6 @@ function NavBar() {
                 variant="outline"
               >
                 Projects
-              </Button>
-
-              <Button
-                as={NextLink}
-                href={'/gallery'}
-                size="md"
-                variant="outline"
-              >
-                Gallery
               </Button>
 
               <Button as={NextLink} href={'/about'} size="md" variant="outline">

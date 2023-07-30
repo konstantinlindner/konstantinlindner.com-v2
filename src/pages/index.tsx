@@ -6,14 +6,15 @@ import {
   Image,
   Text,
   Box,
-  Hide,
-  Show,
-  Center,
+  useMediaQuery,
+  Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import dedent from 'dedent';
 
 function Home() {
+  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
+
   const introText = `A full-stack developer with a passion for crafting exceptional digital experiences. My journey in the vast world of web development has led me to explore a diverse range of technologies and frameworks, shaping me into the developer I am today.
 
   I'm deeply enamored with React and Typescript, and they form the backbone of my projects. NextJS and Express are my go-to tools for building powerful, scalable applications, while Prisma ensures smooth database interactions. But my interests don't end there—I've also dabbled with Vue and Svelte, always hungry to expand my horizons and embrace new challenges. When it comes to styling, I've worked with CSS frameworks like Chakra UI, Tailwind, and MUI, making sure that every pixel on the screen is pixel-perfect. Backend technologies I have used include Firebase, Supabase and Laravel.
@@ -36,50 +37,28 @@ function Home() {
         maxW="600"
         mx="auto"
       >
-        <Hide below="sm">
-          <Image
-            float="right"
-            ml="3"
-            mb="3"
-            borderRadius="full"
-            boxSize="150px"
-            src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-            alt="Konstantin Lindner"
-          />
-        </Hide>
+        <Image
+          float={isSmallScreen ? 'none' : 'right'}
+          mx={isSmallScreen ? 'auto' : 'none'}
+          ml={isSmallScreen ? 'none' : '3'}
+          mb="3"
+          borderRadius="full"
+          boxSize="150px"
+          src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
+          alt="Konstantin Lindner"
+        />
 
-        <Show below="sm">
-          <Image
-            mx="auto"
-            mb="3"
-            borderRadius="full"
-            boxSize="150px"
-            src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-            alt="Konstantin Lindner"
-          />
-        </Show>
-
-        <Hide below="sm">
-          <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-          <Text whiteSpace="nowrap">
+        <Flex flexDirection="column">
+          <Heading mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
+            Konstantin Lindner
+          </Heading>
+          <Text mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
             QA Engineer @{' '}
             <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
               m56 Studios
             </Link>
           </Text>
-        </Hide>
-
-        <Show below="sm">
-          <Center>
-            <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-          </Center>
-          <Text align="center" whiteSpace="nowrap">
-            QA Engineer @{' '}
-            <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
-              m56 Studios
-            </Link>
-          </Text>
-        </Show>
+        </Flex>
 
         <Box
           mt="5"
@@ -96,17 +75,9 @@ function Home() {
         >
           <Text style={{ whiteSpace: 'pre-line' }}>{dedent(introText)}</Text>
 
-          <Box pt="5">
-            <Hide below="sm">
-              <SocialLinkRow size="sm" fontSize="xl" />
-            </Hide>
-
-            <Show below="sm">
-              <Center>
-                <SocialLinkRow size="md" fontSize="2xl" />
-              </Center>
-            </Show>
-          </Box>
+          <Flex justifyContent={isSmallScreen ? 'center' : 'flex-start'} pt="5">
+            <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
+          </Flex>
         </Box>
       </Box>
     </Box>
