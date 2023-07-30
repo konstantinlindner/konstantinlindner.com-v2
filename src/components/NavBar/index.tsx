@@ -32,10 +32,6 @@ function NavBar() {
                 Projects
               </Button>
 
-              <Button as={NextLink} href={'/gallery'}>
-                Gallery
-              </Button>
-
               <Button as={NextLink} href={'/about'}>
                 About
               </Button>
