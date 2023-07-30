@@ -19,7 +19,10 @@ function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
           {where}
         </Link>
 
-        <Box position={isSmallScreen ? undefined : 'absolute'}>
+        <Box
+          position={isSmallScreen ? undefined : 'absolute'}
+          mx={isSmallScreen ? 'auto' : 'none'}
+        >
           <Text as="i">{what}</Text>
         </Box>
       </Box>
