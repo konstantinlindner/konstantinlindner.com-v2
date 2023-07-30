@@ -16,7 +16,7 @@ function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
     <Box w="100%">
       <Link
         fontWeight="bold"
-        width={isSmallScreen ? '120px' : '180px'}
+        width={isSmallScreen ? '130px' : '180px'}
         href={link}
         isExternal
         style={{ display: 'inline-block' }}
