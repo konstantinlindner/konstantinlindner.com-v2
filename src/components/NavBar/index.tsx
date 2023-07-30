@@ -22,7 +22,12 @@ function NavBar() {
     <>
       {/* Desktop navbar */}
       <Box
-        display={isSmallScreen ? 'none' : 'block'}
+        css={{
+          display: 'block',
+          '@media (max-width: 600px)': {
+            display: 'none',
+          },
+        }}
         maxW="600px"
         pt="7"
         pb="10"
@@ -48,7 +53,16 @@ function NavBar() {
       </Box>
 
       {/* Mobile navbar */}
-      <Box display={isSmallScreen ? 'block' : 'none'} maxW="550px" pt="2">
+      <Box
+        css={{
+          display: 'none',
+          '@media (max-width: 600px)': {
+            display: 'block',
+          },
+        }}
+        maxW="550px"
+        pt="2"
+      >
         <Flex>
           <IconButton
             onClick={onToggle}
