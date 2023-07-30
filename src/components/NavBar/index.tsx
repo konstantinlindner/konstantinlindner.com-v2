@@ -8,7 +8,6 @@ import {
   Stack,
   useDisclosure,
   Collapse,
-  useMediaQuery,
 } from '@chakra-ui/react';
 import ColorModeSwitcher from './colorModeSwitcher';
 import NextLink from 'next/link';
@@ -16,7 +15,6 @@ import { Icon } from '@iconify/react';
 
 function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
-  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
 
   return (
     <>

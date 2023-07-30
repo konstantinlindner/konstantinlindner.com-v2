@@ -1,4 +1,4 @@
-import { Text, Link, Box, VStack } from '@chakra-ui/react';
+import { Text, Link, Box, useMediaQuery } from '@chakra-ui/react';
 import dedent from 'dedent';
 
 interface ExperienceItem {
@@ -10,11 +10,13 @@ interface ExperienceItem {
 }
 
 function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
+  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
+
   return (
     <Box w="100%">
       <Link
         fontWeight="bold"
-        width="180px"
+        width={isSmallScreen ? '140px' : '180px'}
         href={link}
         isExternal
         style={{ display: 'inline-block' }}

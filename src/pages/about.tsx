@@ -61,7 +61,7 @@ function About() {
               </Heading>
             </Box>
 
-            <SocialLinkRow />
+            <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
           </Box>
 
           <Box
