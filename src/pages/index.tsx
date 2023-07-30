@@ -25,7 +25,18 @@ function Home() {
     <Box pb="10" mx="5">
       <NavBar />
 
-      <Box maxW="600" mx="auto">
+      <Box
+        as={motion.div}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 0.8, delay: 0.1 },
+        }}
+        maxW="600"
+        mx="auto"
+      >
         <Image
           float={isSmallScreen ? 'none' : 'right'}
           mx={isSmallScreen ? 'auto' : 'none'}
@@ -37,50 +48,36 @@ function Home() {
           alt="Konstantin Lindner"
         />
 
+        <Flex flexDirection="column">
+          <Heading mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
+            Konstantin Lindner
+          </Heading>
+          <Text mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
+            QA Engineer @{' '}
+            <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
+              m56 Studios
+            </Link>
+          </Text>
+        </Flex>
+
         <Box
+          mt="5"
           as={motion.div}
           initial={{
+            y: 10,
             opacity: 0,
           }}
           animate={{
+            y: 0,
             opacity: 1,
             transition: { duration: 0.8, delay: 0.1 },
           }}
         >
-          <Flex flexDirection="column">
-            <Heading mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
-              Konstantin Lindner
-            </Heading>
-            <Text mx={isSmallScreen ? 'auto' : 'none'} whiteSpace="nowrap">
-              QA Engineer @{' '}
-              <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
-                m56 Studios
-              </Link>
-            </Text>
+          <Text style={{ whiteSpace: 'pre-line' }}>{dedent(introText)}</Text>
+
+          <Flex justifyContent={isSmallScreen ? 'center' : 'flex-start'} pt="5">
+            <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
           </Flex>
-
-          <Box
-            mt="5"
-            as={motion.div}
-            initial={{
-              y: 10,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.8, delay: 0.1 },
-            }}
-          >
-            <Text style={{ whiteSpace: 'pre-line' }}>{dedent(introText)}</Text>
-
-            <Flex
-              justifyContent={isSmallScreen ? 'center' : 'flex-start'}
-              pt="5"
-            >
-              <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
-            </Flex>
-          </Box>
         </Box>
       </Box>
     </Box>
