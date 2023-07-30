@@ -38,11 +38,12 @@ function About() {
         }}
       >
         <VStack align="left" spacing="10" maxW="600" mx="auto">
-          <Box mb="-10">
+          <Box mb={isSmallScreen ? '0' : '-10'}>
             <Image
-              float="right"
-              ml="3"
-              mx="auto"
+              float={isSmallScreen ? 'none' : 'right'}
+              mx={isSmallScreen ? 'auto' : 'none'}
+              ml={isSmallScreen ? 'none' : '3'}
+              mb="3"
               borderRadius="full"
               boxSize="150px"
               src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1690684064/about_tfpwej.webp"
