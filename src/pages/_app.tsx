@@ -11,9 +11,6 @@ const Providers = ({ children }: { readonly children: ReactNode }) => (
 );
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  // TODO Getlayout thing
-  //   const getLayout = Component.getLayout ?? ((page) => page);
-
   return (
     <>
       <GoogleAnalytics trackPageViews />
