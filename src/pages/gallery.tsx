@@ -3,11 +3,9 @@ import { Box } from '@chakra-ui/react';
 
 function Gallery() {
   return (
-    <>
-      <Box pb="5" mx="5">
-        <NavBar />
-      </Box>
-    </>
+    <Box pb="10" mx="5">
+      <NavBar />
+    </Box>
   );
 }
 

@@ -14,9 +14,10 @@ function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
     <Box w="100%">
       <Link
         fontWeight="bold"
+        width="180px"
         href={link}
         isExternal
-        style={{ display: 'inline-block', width: '180px' }}
+        style={{ display: 'inline-block' }}
       >
         {where}
       </Link>
@@ -27,11 +28,9 @@ function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
 
       <Text fontSize="sm">{date}</Text>
 
-      <VStack spacing="2">
-        <Text style={{ whiteSpace: 'pre-line' }} my="2">
-          {dedent(content)}
-        </Text>
-      </VStack>
+      <Text style={{ whiteSpace: 'pre-line' }} mt="5">
+        {dedent(content)}
+      </Text>
     </Box>
   );
 }

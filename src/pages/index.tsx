@@ -11,127 +11,105 @@ import {
   Center,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import dedent from 'dedent';
 
 function Home() {
+  const introText = `A full-stack developer with a passion for crafting exceptional digital experiences. My journey in the vast world of web development has led me to explore a diverse range of technologies and frameworks, shaping me into the developer I am today.
+
+  I'm deeply enamored with React and Typescript, and they form the backbone of my projects. NextJS and Express are my go-to tools for building powerful, scalable applications, while Prisma ensures smooth database interactions. But my interests don't end there—I've also dabbled with Vue and Svelte, always hungry to expand my horizons and embrace new challenges. When it comes to styling, I've worked with CSS frameworks like Chakra UI, Tailwind, and MUI, making sure that every pixel on the screen is pixel-perfect. Backend technologies I have used include Firebase, Supabase and Laravel.
+
+  I approach life with curiosity, optimism, and an unyielding thirst for improvement. A perpetual optimist, you'll seldom hear me say no to any challenge that comes my way. I believe in setting high standards for myself and those around me, constantly striving to become better at my craft. My keen eye for detail helps me identify areas of improvement, no matter how small, and I enjoy brainstorming creative solutions to solve problems effectively.`;
+
   return (
-    <>
-      <Box pb="5" mx="5">
-        <NavBar />
+    <Box pb="10" mx="5">
+      <NavBar />
+
+      <Box
+        as={motion.div}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 0.8, delay: 0.1 },
+        }}
+        maxW="600"
+        mx="auto"
+      >
+        <Hide below="sm">
+          <Image
+            float="right"
+            ml="3"
+            mb="3"
+            borderRadius="full"
+            boxSize="150px"
+            src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
+            alt="Konstantin Lindner"
+          />
+        </Hide>
+
+        <Show below="sm">
+          <Image
+            mx="auto"
+            mb="3"
+            borderRadius="full"
+            boxSize="150px"
+            src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
+            alt="Konstantin Lindner"
+          />
+        </Show>
+
+        <Hide below="sm">
+          <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
+          <Text whiteSpace="nowrap">
+            QA Engineer @{' '}
+            <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
+              m56 Studios
+            </Link>
+          </Text>
+        </Hide>
+
+        <Show below="sm">
+          <Center>
+            <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
+          </Center>
+          <Text align="center" whiteSpace="nowrap">
+            QA Engineer @{' '}
+            <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
+              m56 Studios
+            </Link>
+          </Text>
+        </Show>
 
         <Box
+          mt="5"
           as={motion.div}
           initial={{
+            y: 10,
             opacity: 0,
           }}
           animate={{
+            y: 0,
             opacity: 1,
             transition: { duration: 0.8, delay: 0.1 },
           }}
-          maxW="600"
-          mx="auto"
         >
-          <Hide below="sm">
-            <Image
-              float="right"
-              ml="3"
-              mb="3"
-              borderRadius="full"
-              boxSize="150px"
-              src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-              alt="Konstantin Lindner"
-            />
-          </Hide>
+          <Text style={{ whiteSpace: 'pre-line' }}>{dedent(introText)}</Text>
 
-          <Show below="sm">
-            <Image
-              mx="auto"
-              mb="3"
-              borderRadius="full"
-              boxSize="150px"
-              src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1682728237/pb_france_original_webp.webp"
-              alt="Konstantin Lindner"
-            />
-          </Show>
+          <Box pt="5">
+            <Hide below="sm">
+              <SocialLinkRow size="sm" fontSize="xl" />
+            </Hide>
 
-          <Hide below="sm">
-            <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-            <Text whiteSpace="nowrap">
-              QA Engineer @{' '}
-              <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
-                m56 Studios
-              </Link>
-            </Text>
-          </Hide>
-
-          <Show below="sm">
-            <Center>
-              <Heading whiteSpace="nowrap">Konstantin Lindner</Heading>
-            </Center>
-            <Text align="center" whiteSpace="nowrap">
-              QA Engineer @{' '}
-              <Link fontWeight="bold" href="https://m56studios.com/" isExternal>
-                m56 Studios
-              </Link>
-            </Text>
-          </Show>
-
-          <Box
-            as={motion.div}
-            initial={{
-              y: 10,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.8, delay: 0.1 },
-            }}
-          >
-            <Text mt="5" align="left" py="1" maxW="700">
-              An aspiring full-stack developer. My stack of choice is React
-              using Typescript, NextJS and Express with Prisma. I also have
-              experience with frameworks such as Vue and Svelte. When it comes
-              to CSS frameworks, I have worked with Chakra UI, Tailwind and MUI.
-              Backend experience with Firebase, Supabase and Laravel.
-            </Text>
-            <Text align="left" py="1" maxW="700">
-              As a person I am curious and optimistic, with an eye for detail
-              and improvement. I&apos;m driven by always becoming better at what
-              I do and set high standards for both myself and others.
-            </Text>
-            <Text align="left" py="1" maxW="700">
-              Currently working on the development team for{' '}
-              <Link fontWeight="bold" href="https://www.fit52.com/" isExternal>
-                fit52
-              </Link>
-              , a fitness app from Carrie Underwood. Previous projects include
-              working on{' '}
-              <Link
-                fontWeight="bold"
-                href="https://www.hanx101.com/"
-                isExternal
-              >
-                Hanx101
-              </Link>
-              , a trivia game by Tom Hanks as well as multiple projects related
-              to AI and machine learning, still unreleased.
-            </Text>
-
-            <Box pt="5">
-              <Hide below="sm">
-                <SocialLinkRow size="sm" fontSize="xl" />
-              </Hide>
-
-              <Show below="sm">
-                <Center>
-                  <SocialLinkRow size="md" fontSize="2xl" />
-                </Center>
-              </Show>
-            </Box>
+            <Show below="sm">
+              <Center>
+                <SocialLinkRow size="md" fontSize="2xl" />
+              </Center>
+            </Show>
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 

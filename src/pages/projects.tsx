@@ -5,29 +5,27 @@ import { motion } from 'framer-motion';
 
 function Projects() {
   return (
-    <>
-      <Box pb="5" mx="5">
-        <NavBar />
+    <Box pb="10" mx="5">
+      <NavBar />
 
-        <VStack
-          as={motion.div}
-          initial={{
-            y: 10,
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.8, delay: 0.1 },
-          }}
-          spacing="10"
-          mt="10"
-          direction="column"
-        >
-          <ProjectsDisplay />
-        </VStack>
-      </Box>
-    </>
+      <VStack
+        as={motion.div}
+        initial={{
+          y: 10,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.8, delay: 0.1 },
+        }}
+        spacing="10"
+        mt="10"
+        direction="column"
+      >
+        <ProjectsDisplay />
+      </VStack>
+    </Box>
   );
 }
 

@@ -1,48 +1,60 @@
 import NavBar from '../components/NavBar';
 import SocialLinkRow from '../components/SocialLinkRow';
 import ExperienceItem from '../components/ExperienceItem';
-import { Box, Heading, Text, VStack } from '@chakra-ui/react';
+import LanguageItem from '../components/LanguageItem';
+
+import { Box, Heading, Text, VStack, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import dedent from 'dedent';
 
 function About() {
-  const iAmText = `An extremely curious, positive and optimistic person with an eye for detail and improvement. I am almos always happy, spirited and ready to go on whatever journey awaits next, seldom you will hear me saying the word no. Some of my biggest strengths are finding areas of improvement, big or small, and seeing the possible solutions to a specific problem. Furthermore, data and statistics are big interests and passions of mine. I love creating Excel-sheets filled to the brim with formulas and charts to visualize important data.
+  const iAmText = `A curious and optimistic full-stack developer, passionate about technology and data. Collaborating on exciting projects, building real connections, and embracing challenges drive me.
 
-  Another equally fundamental part in my life is getting to know and working with people focusing on building great relationships and real connections. When evaluating a workplace, how well the employees are operating as a team, helping out each other and working together to achieve things are some of my main areas of consideration and attention.`;
+  Currently, I'm fortunate to be part of the development team for fit52, a cutting-edge fitness app created by none other than the amazing Carrie Underwood. It's an exciting project that fuels my desire to push boundaries and deliver the best possible results. In the past, I've been involved in creating the thrilling trivia game, Hanx101, in collaboration with the talented Tom Hanks. Additionally, I've had the privilege of contributing to various AI and machine learning projects, which are yet to be unveiled to the world.
+
+  While technology captivates me, I also cherish the human element. Building genuine connections with people and fostering strong relationships are equally essential in both my personal and professional life. When evaluating any workplace or project, I pay keen attention to how well the team collaborates, supports one another, and achieves collective goals. True greatness often emerges from the unity of dedicated individuals working together.`;
 
   return (
-    <>
-      <Box pb="5" mx="5">
-        <NavBar />
+    <Box pb="10" mx="5">
+      <NavBar />
 
-        <Box
-          as={motion.div}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-            transition: { duration: 0.8, delay: 0.1 },
-          }}
-          maxW="600"
-          mx="auto"
-        >
-          <Box mb="2">
-            <Heading size="lg" color={'#eb3a34'}>
-              Hi,
-            </Heading>
-            <Heading as="span" size="lg" color="grey">
-              My name is{' '}
-            </Heading>
-            <Heading as="span" size="lg">
-              Konstantin Lindner.
-            </Heading>
+      <Box
+        as={motion.div}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 0.8, delay: 0.1 },
+        }}
+      >
+        <VStack align="left" spacing="10" maxW="600" mx="auto">
+          <Box mb="-10">
+            <Image
+              float="right"
+              ml="3"
+              mx="auto"
+              borderRadius="full"
+              boxSize="150px"
+              src="https://res.cloudinary.com/dhiamlbjm/image/upload/v1690684064/about_tfpwej.webp"
+              alt="Konstantin Lindner"
+            />
+            <Box mb="2">
+              <Heading size="lg" color={'#eb3a34'}>
+                Hi,
+              </Heading>
+              <Heading as="span" size="lg" color="grey">
+                My name is{' '}
+              </Heading>
+              <Heading style={{ whiteSpace: 'nowrap' }} as="span" size="lg">
+                Konstantin Lindner.
+              </Heading>
+            </Box>
+
+            <SocialLinkRow />
           </Box>
 
-          <SocialLinkRow />
-
           <Box
-            my="10"
             as={motion.div}
             initial={{
               y: 10,
@@ -54,15 +66,13 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="2">
+            <Heading size="lg" color={'#eb3a34'} mb="5">
               I am
             </Heading>
 
             <Text style={{ whiteSpace: 'pre-line' }}>{dedent(iAmText)}</Text>
           </Box>
-
           <Box
-            mb="10"
             as={motion.div}
             initial={{
               y: 10,
@@ -74,11 +84,11 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="3">
+            <Heading size="lg" color={'#eb3a34'} mb="7">
               Selected Work Experience
             </Heading>
 
-            <VStack spacing="5">
+            <VStack spacing="10">
               <ExperienceItem
                 link="https://m56studios.com/"
                 where="m56 Studios"
@@ -126,9 +136,7 @@ function About() {
               />
             </VStack>
           </Box>
-
           <Box
-            mb="10"
             as={motion.div}
             initial={{
               y: 10,
@@ -140,11 +148,11 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="3">
+            <Heading size="lg" color={'#eb3a34'} mb="7">
               Education
             </Heading>
 
-            <VStack spacing="5">
+            <VStack spacing="10">
               <ExperienceItem
                 link="https://hermods.se/"
                 where="Hermods"
@@ -170,9 +178,7 @@ function About() {
               />
             </VStack>
           </Box>
-
           <Box
-            mb="10"
             as={motion.div}
             initial={{
               y: 10,
@@ -184,17 +190,17 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="3">
+            <Heading size="lg" color={'#eb3a34'} mb="7">
               Certifications & Awards
             </Heading>
 
-            <VStack spacing="5">
+            <VStack spacing="10">
               <ExperienceItem
                 link="https://www.betterbusiness.se/"
                 where="Better Business"
                 what="Suverän Service"
                 date="Dec 2020"
-                content='I received the rare and prestigious "Suverän Service" commendation from Better Business World Wide, as a mystery shopper recognized my exceptional customer service skills. 
+                content='I received the rare and prestigious "Suverän Service" commendation from Better Business World Wide, as a mystery shopper recognized my exceptional customer service skills.
                 \n\n
                 The motivation behind the commendation read: "Konstantin displayed remarkable kindness, trustworthiness, and attentiveness to my needs as a customer. His dedication in resolving my issue went above and beyond, making our interaction feel like a conversation with a friend. I was so impressed that I would have happily made a purchase solely based on the positive experience of speaking with this outstanding employee."'
               />
@@ -204,13 +210,11 @@ function About() {
                 where="IELTS Official"
                 what="8.5 Overall Band Score"
                 date="Jun 2023"
-                content="In June 2023, I took the IELTS English test with IELTS Official and achieved an overall band score of 8.5 out of 9. This accomplishment reflects my strong English language proficiency in Listening, Reading, Writing, and Speaking. I am proud of this achievement as it opens up opportunities for academic and professional growth in diverse international settings."
+                content="In June 2023, I took the IELTS English and achieved an overall band score of 8.5 out of 9. This accomplishment reflects my strong English language proficiency in Listening, Reading, Writing, and Speaking. I am proud of this achievement as it opens up opportunities for academic and professional growth in diverse international settings."
               />
             </VStack>
           </Box>
-
           <Box
-            mb="10"
             as={motion.div}
             initial={{
               y: 10,
@@ -222,28 +226,25 @@ function About() {
               transition: { duration: 0.8, delay: 0.1 },
             }}
           >
-            <Heading size="lg" color={'#eb3a34'} mb="1">
+            <Heading size="lg" color={'#eb3a34'} mb="7">
               Language Skills
             </Heading>
 
-            <Box py="1">
-              <Text>
-                <b>Swedish</b> - mother tounge
-              </Text>
-              <Text>
-                <b>German</b> - mother tounge
-              </Text>
-              <Text>
-                <b>English</b> - fluent (IELTS 8.5 out of 9)
-              </Text>
-              <Text>
-                <b>French</b> - basic
-              </Text>
-            </Box>
+            <VStack align="left" spacing="2">
+              <LanguageItem
+                language="English"
+                level="Fluent (IELTS 8.5 out of 9)"
+              />
+              <LanguageItem language="Swedish" level="Mother Tounge" />
+              <LanguageItem language="German" level="Mother Tounge" />
+              <LanguageItem language="Spanish" level="Basic" />
+              <LanguageItem language="French" level="Basic" />
+              <LanguageItem language="Japanese" level="Learning" />
+            </VStack>
           </Box>
-        </Box>
+        </VStack>
       </Box>
-    </>
+    </Box>
   );
 }
 
