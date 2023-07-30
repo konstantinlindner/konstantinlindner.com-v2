@@ -1,4 +1,4 @@
-import { Text, Link, Box, useMediaQuery } from '@chakra-ui/react';
+import { Text, Link, Box, Flex, useMediaQuery } from '@chakra-ui/react';
 import dedent from 'dedent';
 
 interface ExperienceItem {
@@ -14,18 +14,14 @@ function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
 
   return (
     <Box w="100%">
-      <Link
-        fontWeight="bold"
-        width={isSmallScreen ? '140px' : '180px'}
-        href={link}
-        isExternal
-        style={{ display: 'inline-block' }}
-      >
-        {where}
-      </Link>
+      <Box display="flex" position="relative" justifyContent="center">
+        <Link mr="auto" fontWeight="bold" href={link} isExternal>
+          {where}
+        </Link>
 
-      <Box as="span">
-        <Text as="i">{what}</Text>
+        <Box position="absolute">
+          <Text as="i">{what}</Text>
+        </Box>
       </Box>
 
       <Text fontSize="sm">{date}</Text>
