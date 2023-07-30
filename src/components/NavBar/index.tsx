@@ -4,12 +4,12 @@ import {
   Button,
   Flex,
   Spacer,
-  Hide,
   IconButton,
   Show,
   Stack,
   useDisclosure,
   Collapse,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import ColorModeSwitcher from './colorModeSwitcher';
 import NextLink from 'next/link';
@@ -17,10 +17,18 @@ import { Icon } from '@iconify/react';
 
 function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
+  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
 
   return (
     <>
-      <Box maxW="600px" pt="7" pb="10" mx="auto">
+      {/* Desktop navbar */}
+      <Box
+        display={isSmallScreen ? 'none' : 'block'}
+        maxW="600px"
+        pt="7"
+        pb="10"
+        mx="auto"
+      >
         <Flex>
           <ButtonGroup ml="-2.5" spacing="1" size="sm" variant="ghost">
             <Button as={NextLink} href={'/'}>
@@ -40,49 +48,46 @@ function NavBar() {
         </Flex>
       </Box>
 
-      <Show below="sm">
-        <Box maxW="550px" pt="2">
-          <Flex>
-            <IconButton
-              onClick={onToggle}
-              aria-label="Menu"
-              variant="ghost"
-              _hover={{ bg: 'null' }}
-              _active={{ bg: 'null' }}
-              _focus={{ bg: 'null' }}
+      {/* Mobile navbar */}
+      <Box display={isSmallScreen ? 'block' : 'none'} maxW="550px" pt="2">
+        <Flex>
+          <IconButton
+            onClick={onToggle}
+            aria-label="Menu"
+            variant="ghost"
+            _hover={{ bg: 'null' }}
+            _active={{ bg: 'null' }}
+            _focus={{ bg: 'null' }}
+            size="md"
+            fontSize="2xl"
+            icon={isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />}
+          ></IconButton>
+
+          <Spacer />
+          <ColorModeSwitcher size="md" fontSize="2xl" variant="ghost" />
+        </Flex>
+
+        <Collapse in={isOpen} animateOpacity>
+          <Stack pt="5" pb="5" direction="column">
+            <Button as={NextLink} href={'/'} size="md" variant="outline">
+              Home
+            </Button>
+
+            <Button
+              as={NextLink}
+              href={'/projects'}
               size="md"
-              fontSize="2xl"
-              icon={
-                isOpen ? <Icon icon="mdi:close" /> : <Icon icon="mdi:menu" />
-              }
-            ></IconButton>
+              variant="outline"
+            >
+              Projects
+            </Button>
 
-            <Spacer />
-            <ColorModeSwitcher size="md" fontSize="2xl" variant="ghost" />
-          </Flex>
-
-          <Collapse in={isOpen} animateOpacity>
-            <Stack pt="5" pb="5" direction="column">
-              <Button as={NextLink} href={'/'} size="md" variant="outline">
-                Home
-              </Button>
-
-              <Button
-                as={NextLink}
-                href={'/projects'}
-                size="md"
-                variant="outline"
-              >
-                Projects
-              </Button>
-
-              <Button as={NextLink} href={'/about'} size="md" variant="outline">
-                About
-              </Button>
-            </Stack>
-          </Collapse>
-        </Box>
-      </Show>
+            <Button as={NextLink} href={'/about'} size="md" variant="outline">
+              About
+            </Button>
+          </Stack>
+        </Collapse>
+      </Box>
     </>
   );
 }
