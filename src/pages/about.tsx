@@ -2,7 +2,6 @@ import NavBar from '../components/NavBar';
 import SocialLinkRow from '../components/SocialLinkRow';
 import ExperienceItem from '../components/ExperienceItem';
 import LanguageItem from '../components/LanguageItem';
-
 import {
   Box,
   Heading,
