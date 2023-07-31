@@ -61,7 +61,9 @@ function About() {
               </Heading>
             </Box>
 
-            <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
+            <Box>
+              <SocialLinkRow size={isSmallScreen ? 'md' : 'sm'} fontSize="xl" />
+            </Box>
           </Box>
 
           <Box
@@ -98,7 +100,7 @@ function About() {
               Selected Work Experience
             </Heading>
 
-            <VStack spacing="10">
+            <VStack spacing="7">
               <ExperienceItem
                 link="https://m56studios.com/"
                 where="m56 Studios"

@@ -1,4 +1,4 @@
-import { Text, Link, Box, Divider, useMediaQuery } from '@chakra-ui/react';
+import { Text, Link, Box, Divider } from '@chakra-ui/react';
 import dedent from 'dedent';
 
 interface ExperienceItem {
@@ -10,8 +10,6 @@ interface ExperienceItem {
 }
 
 function ExperienceItem({ link, where, what, date, content }: ExperienceItem) {
-  const [isSmallScreen] = useMediaQuery('(max-width: 600px)');
-
   return (
     <Box>
       <Text fontSize="lg">

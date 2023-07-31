@@ -6,11 +6,12 @@ import {
   CardBody,
   Stack,
   Button,
-  Divider,
   CardFooter,
   ButtonGroup,
   Link,
   Flex,
+  Box,
+  Divider,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -24,6 +25,9 @@ interface ProjectItemProps {
   imgUrl: string;
   frontText: string;
   backText: string;
+  year?: string;
+  role?: string;
+  stack: string;
   link1?: string;
   linkLabel1?: string;
   link2?: string;
@@ -36,6 +40,9 @@ function ProjectItem(props: ProjectItemProps) {
     imgUrl,
     frontText,
     backText,
+    year,
+    role,
+    stack,
     link1,
     linkLabel1,
     link2,
@@ -54,90 +61,122 @@ function ProjectItem(props: ProjectItemProps) {
   };
 
   return (
-    <Card
-      as={motion.div}
-      animate={{
-        rotateY: isRotated.card ? 180 : 0,
-        transition: { duration: 0.35 },
-      }}
-      maxW="sm"
-      minH="xl"
-    >
-      <CardBody
-        display={isRotated.card ? 'none' : 'block'}
+    <Box>
+      <Card
         as={motion.div}
         animate={{
-          opacity: isRotated.card ? 0 : 1,
+          rotateY: isRotated.card ? 180 : 0,
+          transition: { duration: 0.35 },
         }}
+        maxW="sm"
+        minH="xl"
       >
-        <Image src={imgUrl} alt={name} borderRadius="lg" />
-        <Stack mt="6" spacing="3">
-          <Heading size="md">{name}</Heading>
-          <Text>{frontText}</Text>
-        </Stack>
-      </CardBody>
+        <CardBody
+          display={isRotated.card ? 'none' : 'block'}
+          as={motion.div}
+          animate={{
+            opacity: isRotated.card ? 0 : 1,
+          }}
+        >
+          <Image src={imgUrl} alt={name} borderRadius="lg" />
+          <Stack mt="6" spacing="3">
+            <Heading size="md">{name}</Heading>
+            <Text>{frontText}</Text>
+          </Stack>
+        </CardBody>
 
-      <CardBody
-        display={isRotated.card ? 'block' : 'none'}
-        as={motion.div}
-        animate={{
-          opacity: isRotated.card ? 1 : 0,
-        }}
-        transform="rotateY(180deg)"
-      >
-        <Stack mt="6" spacing="3">
-          <Heading size="md">{name}</Heading>
-          <Text>{backText}</Text>
-        </Stack>
-      </CardBody>
+        <CardBody
+          display={isRotated.card ? 'block' : 'none'}
+          as={motion.div}
+          animate={{
+            opacity: isRotated.card ? 1 : 0,
+          }}
+          transform="rotateY(180deg)"
+        >
+          <Stack mt="6" spacing="3">
+            <Heading size="md">{name}</Heading>
 
-      <Divider />
+            <Text>{backText}</Text>
+            <Divider mt="2" />
 
-      <CardFooter
-        display={isRotated.card ? 'none' : 'block'}
-        as={motion.div}
-        animate={{
-          opacity: isRotated.card ? 0 : 1,
-        }}
-      >
-        <Flex>
-          <Button variant="solid" onClick={() => handleFlip('card')}>
-            Read More
-          </Button>
-          <ButtonGroup ml="auto" my="auto" spacing="5">
-            <Link href={link1} isExternal>
-              {linkLabel1}
-            </Link>
-            <Link href={link2} isExternal>
-              {linkLabel2}
-            </Link>
-          </ButtonGroup>
-        </Flex>
-      </CardFooter>
+            {year && (
+              <Box>
+                <Heading mb="2" size="sm">
+                  Year
+                </Heading>
+                <Text>{year}</Text>
+                <Divider mt="2" />
+              </Box>
+            )}
 
-      <CardFooter
-        display={isRotated.card ? 'block' : 'none'}
-        as={motion.div}
-        animate={{
-          opacity: isRotated.card ? 1 : 0,
-        }}
-        transform="rotateY(180deg)"
-      >
-        <Flex>
-          <Button variant="solid" onClick={() => handleFlip('card')}>
-            Back
-          </Button>
-          <ButtonGroup ml="auto" my="auto" spacing="5">
-            <Link href={link1} isExternal>
-              {linkLabel1}
-            </Link>
-            <Link href={link2} isExternal>
-              {linkLabel2}
-            </Link>
-          </ButtonGroup>
-        </Flex>
-      </CardFooter>
-    </Card>
+            {role && (
+              <Box>
+                <Heading mb="2" size="sm">
+                  Role
+                </Heading>
+                <Text>{role}</Text>
+                <Divider mt="2" />
+              </Box>
+            )}
+
+            {stack && (
+              <Box>
+                <Heading size="sm">Stack</Heading>
+                <Text>{stack}</Text>
+                <Divider mt="2" />
+              </Box>
+            )}
+          </Stack>
+        </CardBody>
+
+        <Divider />
+
+        <CardFooter
+          display={isRotated.card ? 'none' : 'block'}
+          as={motion.div}
+          animate={{
+            opacity: isRotated.card ? 0 : 1,
+          }}
+        >
+          <Flex>
+            <Button variant="solid" onClick={() => handleFlip('card')}>
+              Project Info
+            </Button>
+            <ButtonGroup ml="auto" my="auto" spacing="5">
+              <Link href={link1} isExternal>
+                {linkLabel1}
+              </Link>
+              <Link href={link2} isExternal>
+                {linkLabel2}
+              </Link>
+            </ButtonGroup>
+          </Flex>
+        </CardFooter>
+
+        <CardFooter
+          display={isRotated.card ? 'block' : 'none'}
+          as={motion.div}
+          animate={{
+            opacity: isRotated.card ? 1 : 0,
+          }}
+          transform="rotateY(180deg)"
+        >
+          <Flex>
+            <Button variant="solid" onClick={() => handleFlip('card')}>
+              Back
+            </Button>
+            <ButtonGroup ml="auto" my="auto" spacing="5">
+              <Link href={link1} isExternal>
+                {linkLabel1}
+              </Link>
+              <Link href={link2} isExternal>
+                {linkLabel2}
+              </Link>
+            </ButtonGroup>
+          </Flex>
+        </CardFooter>
+      </Card>
+    </Box>
   );
 }
 

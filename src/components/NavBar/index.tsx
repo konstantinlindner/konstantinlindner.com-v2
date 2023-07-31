@@ -17,8 +17,7 @@ function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <>
-      {/* Desktop navbar */}
+    <Box>
       <Box
         css={{
           display: 'block',
@@ -50,7 +49,6 @@ function NavBar() {
         </Flex>
       </Box>
 
-      {/* Mobile navbar */}
       <Box
         css={{
           display: 'none',
@@ -99,7 +97,7 @@ function NavBar() {
           </Stack>
         </Collapse>
       </Box>
-    </>
+    </Box>
   );
 }
 
