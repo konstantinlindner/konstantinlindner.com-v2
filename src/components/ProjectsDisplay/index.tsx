@@ -6,9 +6,9 @@ interface projectItem {
   name: string;
   imgUrl: string;
   frontText: string;
+  backText: string;
   year?: string;
   role?: string;
-  backText: string;
   stack: string;
   link1?: string;
   linkLabel1?: string;
@@ -28,7 +28,7 @@ function projectsDisplay() {
         focus on long-term health and sustainability, fit52 provides
         a comprehensive platform for individuals of all fitness
         levels to achieve their wellness goals.`,
-      backText: `fit52 Back text`,
+      backText: `As a QA Engineer on fit52, I've had the opportunity to play a significant role in the development of the app. Responsible for reviewing and approving all code changes of both front-end and back-end, utilizing manual testing as well as advanced tools such as Detox and Maestro for automated tests.`,
       year: `2022 - current`,
       role: `QA Engineer`,
       stack: `Typescript with React Native, Laravel and Firebase`,
@@ -45,10 +45,10 @@ function projectsDisplay() {
       Featuring intuitive gameplay and stunning visuals, Hanx101
       keeps you hooked with its ever-expanding question database
       and exciting rewards.`,
-      backText: `Hanx101 Back text`,
+      backText: `Being tasked with rapidly creating a content management tool for the popular trivia game we decided on a stack of React with MUI for development speed. Although my role was QA, I actively contributed to the project by writing code as well.`,
       year: `2023`,
       role: `QA Engineer`,
-      stack: `Typescript with React and Firebase`,
+      stack: `Typescript with React, MUI and Firebase`,
       link1: 'https://www.hanx101.com/',
       linkLabel1: 'Website',
     },
@@ -129,8 +129,9 @@ function projectsDisplay() {
             imgUrl={projectItem.imgUrl}
             frontText={projectItem.frontText}
             backText={projectItem.backText}
-            stack={projectItem.stack}
+            year={projectItem.year}
             role={projectItem.role}
+            stack={projectItem.stack}
             link1={projectItem.link1}
             linkLabel1={projectItem.linkLabel1}
             link2={projectItem.link2}
@@ -149,8 +150,9 @@ function projectsDisplay() {
             imgUrl={projectItem.imgUrl}
             frontText={projectItem.frontText}
             backText={projectItem.backText}
-            stack={projectItem.stack}
+            year={projectItem.year}
             role={projectItem.role}
+            stack={projectItem.stack}
             link1={projectItem.link1}
             linkLabel1={projectItem.linkLabel1}
             link2={projectItem.link2}

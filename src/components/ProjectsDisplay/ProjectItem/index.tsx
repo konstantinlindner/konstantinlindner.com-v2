@@ -68,8 +68,8 @@ function ProjectItem(props: ProjectItemProps) {
           rotateY: isRotated.card ? 180 : 0,
           transition: { duration: 0.35 },
         }}
-        maxW="sm"
-        minH="xl"
+        maxWidth="sm"
+        height="xl"
       >
         <CardBody
           display={isRotated.card ? 'none' : 'block'}
@@ -93,40 +93,46 @@ function ProjectItem(props: ProjectItemProps) {
           }}
           transform="rotateY(180deg)"
         >
-          <Stack mt="6" spacing="3">
-            <Heading size="md">{name}</Heading>
+          <Flex height="100%" direction="column" justify="space-between">
+            <Box>
+              <Heading mb="4" size="md">
+                {name}
+              </Heading>
 
-            <Text>{backText}</Text>
-            <Divider mt="2" />
+              <Text>{backText}</Text>
+            </Box>
 
-            {year && (
-              <Box>
-                <Heading mb="2" size="sm">
-                  Year
-                </Heading>
-                <Text>{year}</Text>
-                <Divider mt="2" />
-              </Box>
-            )}
+            <Box>
+              {year && (
+                <Box>
+                  <Heading mb="2" size="sm">
+                    Year
+                  </Heading>
+                  <Text>{year}</Text>
+                  <Divider mt="2" />
+                </Box>
+              )}
 
-            {role && (
-              <Box>
-                <Heading mb="2" size="sm">
-                  Role
-                </Heading>
-                <Text>{role}</Text>
-                <Divider mt="2" />
-              </Box>
-            )}
+              {role && (
+                <Box mt="2">
+                  <Heading mb="2" size="sm">
+                    Role
+                  </Heading>
+                  <Text>{role}</Text>
+                  <Divider mt="2" />
+                </Box>
+              )}
 
-            {stack && (
-              <Box>
-                <Heading size="sm">Stack</Heading>
-                <Text>{stack}</Text>
-                <Divider mt="2" />
-              </Box>
-            )}
-          </Stack>
+              {stack && (
+                <Box mt="2">
+                  <Heading mb="2" size="sm">
+                    Stack
+                  </Heading>
+                  <Text>{stack}</Text>
+                </Box>
+              )}
+            </Box>
+          </Flex>
         </CardBody>
 
         <Divider />
